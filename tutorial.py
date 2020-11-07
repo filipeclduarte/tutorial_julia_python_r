@@ -28,6 +28,7 @@ x
 ### 3.1.2 Bidimensional 
 #### Usar numpy array
 import numpy as np
+
 X = np.array([[1, 2, 3],[4, 5, 6], [7, 8, 9]])
 X
 
@@ -100,7 +101,7 @@ df = pd.read_csv("Smarket.csv")
 ### Visualizar as 5 primeiras linhas
 df.head()
 
-
+df.to_csv('Smarket.csv')
 # 5. Manipulação de dados
 
 # 6. Visualizações
