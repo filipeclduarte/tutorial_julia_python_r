@@ -96,12 +96,12 @@ np.outer(a, b.T)
 import pandas as pd
 
 ## 4.1 Importar dados no formato .csv
-df = pd.read_csv("Smarket.csv")
+df = pd.read_csv("data/Smarket.csv")
 
 ### Visualizar as 5 primeiras linhas
 df.head()
 
-df.to_csv('Smarket.csv')
+# df.to_csv('data/Smarket.csv')
 # 5. Manipulação de dados
 
 # 6. Visualizações

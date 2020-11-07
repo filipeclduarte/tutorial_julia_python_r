@@ -88,6 +88,9 @@ outer(a, b)
 library("ISLR")
 df <- Smarket
 
+# read_csv('data/Smarket.csv')
+#write_csv('data/Smarket.csv')
+
 ## visualizar as 6 primeiras linhas
 head(df)
 

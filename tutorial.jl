@@ -102,10 +102,10 @@ using Gadfly
 #### Importar base de dados 
 df = datasets("ISLR", "Smarket")
 #### Visualizar as primeiras linhas
-head(df)
+first(df, 6)
 
 #### salvar base de dados em .csv
-CSV.write("Smarket.csv", df)
+CSV.write("data/Smarket.csv", df)
 
 
 ### Gráfico de linha
