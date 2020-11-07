@@ -94,8 +94,9 @@ df <- Smarket
 ## visualizar as 6 primeiras linhas
 head(df)
 
-# 4. Manipulação de dados
-library("tidyverse")
+# 4. Escrever os dados
+write.csv(df,'data/Smarket.csv', row.names=FALSE)
+
 
 #### Visualizações
 library("ggplot2")

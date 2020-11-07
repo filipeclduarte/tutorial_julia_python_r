@@ -113,6 +113,10 @@ import seaborn as sns
 plt.plot(df['Today'])
 plt.show()
 
+### Gráfico de dispersão
+plt.scatter(df['Year'],df['Today'])
+plt.show()
+
 #### Seaborn
 sns.lineplot(x='Year',y='Today', data=df)
 plt.show()
