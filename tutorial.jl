@@ -92,7 +92,6 @@ using CSV
 using DataFrames
 
 # 6. Visualizações
-# using Plots
 using Gadfly
 
 ### Importar a base de dados
@@ -105,11 +104,16 @@ first(df, 6)
 CSV.write("data/Smarket.csv", df)
 
 ### Gráfico de linha
+# linha
 plot(df, y=:Today, Geom.line)
 
 ### Gráfico de dispersão
+# Gadfly
 plot(df, x=:Year, y=:Today, Geom.point)
 
 ### Gráfico de dispersão com grupos
-plot(df, xgroup="Direction", x="Year", y="Today",
+plot(df, color=:Direction, x=:Year, y=:Today, Geom.point)
+
+### Com Grid
+plot(df, color=:Direction, xgroup=:Direction, x=:Year, y=:Today,
      Geom.subplot_grid(Geom.point))

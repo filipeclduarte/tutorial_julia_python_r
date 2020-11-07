@@ -118,8 +118,20 @@ plt.scatter(df['Year'],df['Today'])
 plt.show()
 
 #### Seaborn
+## linha
 sns.lineplot(x='Year',y='Today', data=df)
 plt.show()
 
+## dispersão
 sns.scatterplot(x='Year',y='Today', data=df)
+plt.show()
+
+## Gráfico de dispersão com grupos
+sns.catplot(x='Year',y='Today', hue='Direction',data=df)
+plt.show()
+
+## com facetGrid
+g = sns.FacetGrid(df, col='Direction')
+g.map(sns.scatterplot, "Year", "Today", alpha=.7)
+g.add_legend()
 plt.show()

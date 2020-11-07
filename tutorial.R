@@ -101,11 +101,19 @@ write.csv(df,'data/Smarket.csv', row.names=FALSE)
 #### Visualizações
 library("ggplot2")
 
+## Gráfico de linha
 ggplot(df, aes(x=seq_along(Today), y=Today)) + 
 geom_line()
 
+# Gráfico de dispersão
 ggplot(df, aes(x=Year, y=Today)) +
 geom_point()
 
+# Gráfico de dispersão com grupos
+ggplot(df, aes(x=Year, y=Today, color=Direction)) +
+geom_point()
 
-
+## COm facet_wrap
+ggplot(df, aes(x=Year, y=Today, color=Direction)) + 
+geom_point() + 
+facet_wrap(vars(Direction))
