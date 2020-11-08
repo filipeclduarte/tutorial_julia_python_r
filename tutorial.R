@@ -16,8 +16,8 @@ print(x)
 print('o valor de x é ', x)
 
 # 2.1 Interpolação de string
-sprintf("o valor de x é %i", x)
-sprintf("o valor de y é %f", y)
+sprintf('o valor de x é %i', x)
+sprintf('o valor de y é %f', y)
 
 # 3. Coleção de valores
 ## 3.1 Array
@@ -85,7 +85,7 @@ a %*% b
 outer(a, b)
 
 # 4. Importação/Exportação de dados
-library("ISLR")
+library('ISLR')
 df <- Smarket
 
 # read_csv('data/Smarket.csv')
@@ -99,7 +99,7 @@ write.csv(df,'data/Smarket.csv', row.names=FALSE)
 
 
 #### Visualizações
-library("ggplot2")
+library('ggplot2')
 
 ## Gráfico de linha
 ggplot(df, aes(x=seq_along(Today), y=Today)) + 
