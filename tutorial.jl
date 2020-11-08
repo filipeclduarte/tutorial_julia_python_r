@@ -88,11 +88,6 @@ a * b'
 # 4. Importação/Exportação de dados 
 using CSV
 
-<<<<<<< HEAD
-### RDatasets
-
-=======
->>>>>>> ce652543e2fec7ab36089798f089f4d9724a81a6
 # 5. Manipulação de dados 
 using DataFrames
 
