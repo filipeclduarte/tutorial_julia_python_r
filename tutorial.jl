@@ -90,7 +90,6 @@ using CSV
 
 ### RDatasets
 
-
 # 5. Manipulação de dados 
 using DataFrames
 using Queryverse
