@@ -137,5 +137,6 @@ g.add_legend()
 plt.show()
 
 ## Com x sendo contínuo
-sns.scatterplot(x=np.arange(len(df)), y='Today', hue='Direction',data=df)
+x = np.arange(len(df))
+sns.scatterplot(x=x, y='Today', hue='Direction',data=df)
 plt.show()

@@ -118,4 +118,6 @@ plot(df, color=:Direction, x=:Year, y=:Today, Geom.point)
 plot(df, color=:Direction, xgroup=:Direction, x=:Year, y=:Today,
      Geom.subplot_grid(Geom.point))
 
-plot(df, color=:Direction, x=1:nrow(df), y=:Today, Geom.point)
+## Com x sendo contínuo
+x = 1:nrow(df)
+plot(df, color=:Direction, x=x, y=:Today, Geom.point)
