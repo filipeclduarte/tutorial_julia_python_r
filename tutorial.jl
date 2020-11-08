@@ -101,7 +101,7 @@ df = CSV.read("data/Smarket.csv", DataFrame)
 first(df, 6)
 
 #### salvar base de dados em .csv
-CSV.write("data/Smarket.csv", df)
+# CSV.write("data/Smarket.csv", df)
 
 ### Gráfico de linha
 # linha
@@ -117,3 +117,5 @@ plot(df, color=:Direction, x=:Year, y=:Today, Geom.point)
 ### Com Grid
 plot(df, color=:Direction, xgroup=:Direction, x=:Year, y=:Today,
      Geom.subplot_grid(Geom.point))
+
+plot(df, color=:Direction, x=1:nrow(df), y=:Today, Geom.point)

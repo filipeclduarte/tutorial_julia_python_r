@@ -113,7 +113,11 @@ geom_point()
 ggplot(df, aes(x=Year, y=Today, color=Direction)) +
 geom_point()
 
-## COm facet_wrap
+## Com facet_wrap
 ggplot(df, aes(x=Year, y=Today, color=Direction)) + 
 geom_point() + 
 facet_wrap(vars(Direction))
+
+## Agora com x sendo contínuo
+ggplot(df, aes(x=seq_along(Today), y=Today, color=Direction)) + 
+geom_point() 
