@@ -10,10 +10,10 @@ y = -10.5
 y <- -10.5
 y
 
-# 2. Função print
-print(x)
+# 2. Função paste (print como string)
+paste(x)
 
-print('o valor de x é ', x)
+paste('o valor de x é', x)
 
 # 2.1 Interpolação de string
 sprintf('o valor de x é %i', x)
