@@ -135,3 +135,7 @@ g = sns.FacetGrid(df, col='Direction')
 g.map(sns.scatterplot, "Year", "Today", alpha=.7)
 g.add_legend()
 plt.show()
+
+## Com x sendo contínuo
+sns.scatterplot(x=np.arange(len(df)), y='Today', hue='Direction',data=df)
+plt.show()
