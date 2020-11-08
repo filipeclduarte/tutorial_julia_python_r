@@ -28,6 +28,7 @@ x
 ### 3.1.2 Bidimensional 
 #### Usar numpy array
 import numpy as np
+
 X = np.array([[1, 2, 3],[4, 5, 6], [7, 8, 9]])
 X
 
@@ -95,12 +96,12 @@ np.outer(a, b.T)
 import pandas as pd
 
 ## 4.1 Importar dados no formato .csv
-df = pd.read_csv("Smarket.csv")
+df = pd.read_csv("data/Smarket.csv")
 
 ### Visualizar as 5 primeiras linhas
 df.head()
 
-
+# df.to_csv('data/Smarket.csv')
 # 5. Manipulação de dados
 
 # 6. Visualizações
@@ -112,9 +113,25 @@ import seaborn as sns
 plt.plot(df['Today'])
 plt.show()
 
+### Gráfico de dispersão
+plt.scatter(df['Year'],df['Today'])
+plt.show()
+
 #### Seaborn
+## linha
 sns.lineplot(x='Year',y='Today', data=df)
 plt.show()
 
+## dispersão
 sns.scatterplot(x='Year',y='Today', data=df)
+plt.show()
+
+## Gráfico de dispersão com grupos
+sns.catplot(x='Year',y='Today', hue='Direction',data=df)
+plt.show()
+
+## com facetGrid
+g = sns.FacetGrid(df, col='Direction')
+g.map(sns.scatterplot, "Year", "Today", alpha=.7)
+g.add_legend()
 plt.show()

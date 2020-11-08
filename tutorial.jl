@@ -88,45 +88,37 @@ a * b'
 # 4. Importação/Exportação de dados 
 using CSV
 
+<<<<<<< HEAD
 ### RDatasets
 
+=======
+>>>>>>> ce652543e2fec7ab36089798f089f4d9724a81a6
 # 5. Manipulação de dados 
 using DataFrames
-using Queryverse
 
 # 6. Visualizações
-# using Plots
 using Gadfly
 
-#### Importar base de dados 
-df = datasets("ISLR", "Smarket")
+### Importar a base de dados
+df = CSV.read("data/Smarket.csv", DataFrame)
+
 #### Visualizar as primeiras linhas
-head(df)
+first(df, 6)
 
 #### salvar base de dados em .csv
-CSV.write("Smarket.csv", df)
-
+CSV.write("data/Smarket.csv", df)
 
 ### Gráfico de linha
+# linha
 plot(df, y=:Today, Geom.line)
 
 ### Gráfico de dispersão
+# Gadfly
 plot(df, x=:Year, y=:Today, Geom.point)
 
 ### Gráfico de dispersão com grupos
-plot(df, xgroup="Direction", x="Year", y="Today",
+plot(df, color=:Direction, x=:Year, y=:Today, Geom.point)
+
+### Com Grid
+plot(df, color=:Direction, xgroup=:Direction, x=:Year, y=:Today,
      Geom.subplot_grid(Geom.point))
-
-# importar outra base
-iris = dataset("datasets", "iris")
-
-# # selecionando tema
-# theme1 = Theme(key_position=:none)
-
-# fig1a = plot(iris, x=:SepalLength, y=:SepalWidth, color=:Species, theme1,
-#           alpha=[0.6], size=:PetalLength, Scale.size_area(maxvalue=7))
-
-# fig1b = plot(iris, x=:SepalLength, color=:Species, Geom.density,
-#           Guide.ylabel("density"), Coord.cartesian(xmin=4, xmax=8), theme1)
-
-# vstack(fig1a,fig1b)
