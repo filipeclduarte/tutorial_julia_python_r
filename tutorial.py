@@ -96,7 +96,7 @@ np.outer(a, b.T)
 import pandas as pd
 
 ## 4.1 Importar dados no formato .csv
-df = pd.read_csv("data/Smarket.csv")
+df = pd.read_csv('data/Smarket.csv')
 
 ### Visualizar as 5 primeiras linhas
 df.head()
@@ -132,6 +132,10 @@ plt.show()
 
 ## com facetGrid
 g = sns.FacetGrid(df, col='Direction')
-g.map(sns.scatterplot, "Year", "Today", alpha=.7)
-g.add_legend()
+g.map(sns.scatterplot, 'Year', 'Today', alpha=.7)
+plt.show()
+
+## Com x sendo contínuo
+x = np.arange(len(df))
+sns.scatterplot(x=x, y='Today', hue='Direction',data=df)
 plt.show()
