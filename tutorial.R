@@ -121,3 +121,4 @@ facet_wrap(vars(Direction))
 ## Agora com x sendo contínuo
 ggplot(df, aes(x=seq_along(Today), y=Today, color=Direction)) + 
 geom_point() 
+
