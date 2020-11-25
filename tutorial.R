@@ -25,7 +25,7 @@ sprintf('o valor de y é %f', y)
 x <- c(1, 2, 3)
 x
 ### 3.1.2 Bidimensional (matrix)
-X <- matrix(c(1, 2, 3, 4, 5, 6), ncol=3, byrow=TRUE)
+X <- matrix(c(1, 2, 3, 4, 5, 6, 7, 8, 9), ncol=3, byrow=TRUE)
 X
 
 ## 3.2 Fatiamento 
@@ -86,6 +86,8 @@ outer(a, b)
 
 # 4. Importação/Exportação de dados
 library('ISLR')
+df = read.csv('data/Smarket.csv')
+
 df <- Smarket
 
 # read_csv('data/Smarket.csv')

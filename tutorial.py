@@ -29,7 +29,11 @@ x
 #### Usar numpy array
 import numpy as np
 
-X = np.array([[1, 2, 3],[4, 5, 6], [7, 8, 9]])
+X = np.array(
+    [[1, 2, 3],
+    [4, 5, 6], 
+    [7, 8, 9]]
+    )
 X
 
 ## 3.2 Fatiamento
@@ -65,6 +69,7 @@ a + c
 a - c
 a * c
 a / c 
+
 
 ### 3.3.1 Adição de duas Arrays unidimensionais
 

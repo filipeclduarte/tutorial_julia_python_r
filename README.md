@@ -6,7 +6,6 @@ Tutorial para mostrar as diferenças entre Julia, Python e R
 
 Python:
 * Pandas, NumPy, SciPy, Statsmodel, Matplotlib, Seaborn
-
 * Scikit-learn, Keras, Tensorflow, Pytorch, fastai, sktime
 * Pyfolio, QuantLib, Quandl
 

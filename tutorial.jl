@@ -60,12 +60,8 @@ a .+ c
 a .- c
 a .* c
 a ./ c
-
-### 3.3.1 Adição de duas Arrays unidimensionais
-
-a + b
-
-### 3.3.2 Subtração de duas Arrays unidimensionais
+ggplot(df, aes(x=seq_along(Today), y=Today)) + 
+geom_line()s unidimensionais
 
 a - b
 
@@ -93,6 +89,7 @@ using DataFrames
 
 # 6. Visualizações
 using Gadfly
+using VegaLite
 
 ### Importar a base de dados
 df = CSV.read("data/Smarket.csv", DataFrame)
@@ -113,6 +110,7 @@ plot(df, x=:Year, y=:Today, Geom.point)
 
 ### Gráfico de dispersão com grupos
 plot(df, color=:Direction, x=:Year, y=:Today, Geom.point)
+df |> @vlplot(:point, x={"Year:t", axis={format="%Y"}}, y=:Today, color=:Direction)
 
 ### Com Grid
 plot(df, color=:Direction, xgroup=:Direction, x=:Year, y=:Today,
@@ -121,3 +119,17 @@ plot(df, color=:Direction, xgroup=:Direction, x=:Year, y=:Today,
 ## Com x sendo contínuo
 x = 1:nrow(df)
 plot(df, color=:Direction, x=x, y=:Today, Geom.point)
+
+
+
+### Testando aqui umas paradas
+
+@select(df, :Today)
+@where(df, :Year .> 2004)
+
+x_thread = @linq df |>
+    transform(y = 100 * :Today) |>
+    where(:Year .> 2003) |>
+    by(:Direction, meanLag1 = mean(:Lag1), meanLag2 = mean(:Lag2), meanToday = mean(:y)) |>
+    orderby(:meanLag1) |>
+    select(:meanLag1, :meanLag2, :meanToday, var =:Direction)
